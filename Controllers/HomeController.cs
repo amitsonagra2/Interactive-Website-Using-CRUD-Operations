@@ -34,21 +34,7 @@ namespace WebApplication1.Controllers
         public IActionResult FrontPage()
         {
 
-            string test = String.Format("http://universities.hipolabs.com/search?country=United+States");
-
-            WebRequest reqobj = WebRequest.Create(test);
-            HttpWebResponse response = null;
-            response = (HttpWebResponse)reqobj.GetResponse();
-
-            string strRes = null;
-            using(Stream stream = response.GetResponseStream())
-            {
-                StreamReader sr = new StreamReader(stream);
-                strRes = sr.ReadToEnd();
-                //sr.Close();
-              
-            }
-            ViewBag.apiData = strRes;
+           
 
             return View();
         }

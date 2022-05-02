@@ -23,8 +23,8 @@ namespace WebApplication1.Models
 
     public class DataPoints
     {
-        public int x { get; set; }
-        public int y { get; set; }
+        public int? x { get; set; }
+        public int? y { get; set; }
     }
     
 
@@ -40,7 +40,7 @@ namespace WebApplication1.Models
         [Display(Name = "Golbal Ranking")]
         public string? departmentRanking { get; set; }
 
-        public List<Student?> Students { get; set; }
+        //public List<Student?> Students { get; set; }
         
     }
 
@@ -52,13 +52,13 @@ namespace WebApplication1.Models
 
         //public int campusId { get; set; }
         [Required]
-        public string campusCity { get; set; }
+        public string? campusCity { get; set; }
 
-        public string campusState { get; set; }
+        public string? campusState { get; set; }
 
-        public string campusTotEnrollments { get; set; }
+        public string? campusTotEnrollments { get; set; }
 
-        public List<Student?> Students { get; set; }
+        //public List<Student?> Students { get; set; }
     }
 
     public class Student
@@ -67,13 +67,13 @@ namespace WebApplication1.Models
         public int studentId { get; set; }
         [Required]
         [Display(Name = "Student Name")]
-        public string studentName { get; set; }
+        public string? studentName { get; set; }
 
         [Display(Name = "Student SAT Score")]
-        public string studentScore { get; set; }
+        public string? studentScore { get; set; }
 
         [Display(Name = "Apply To USF Campus")]
-        public string appliedUniversity { get; set; }
+        public string? appliedUniversity { get; set; }
 
         //public string departmentName { get; set; }
         //public Department Department { get; set; }
@@ -86,11 +86,11 @@ namespace WebApplication1.Models
 
     public class BigModel
     {
-        public Student Student { get; set; }
+        public Student? Student { get; set; }
         
-        public Campus Campus { get; set; }
+        public Campus? Campus { get; set; }
 
-        public Department Department { get; set; }
+        public Department? Department { get; set; }
     }
 
 }

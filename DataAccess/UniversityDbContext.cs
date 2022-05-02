@@ -6,10 +6,10 @@ namespace WebApplication1.DataAccess
     public class UniversityDbContext : DbContext
     {
         public UniversityDbContext(DbContextOptions<UniversityDbContext> options) : base(options) { }
-        
-        public DbSet<Campus> Campus { get; set; }
-        public DbSet<Department> Department { get; set; }
-        public DbSet<Student> Student { get; set; }
+
+        public DbSet<Campus> Campus { get; set; } = null!;
+        public DbSet<Department> Department { get; set; } = null!;
+        public DbSet<Student> Student { get; set; } = null!;
 
         
         
