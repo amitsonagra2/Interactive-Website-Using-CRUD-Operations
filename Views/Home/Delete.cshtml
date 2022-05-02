@@ -1,0 +1,99 @@
+﻿@model WebApplication1.Models.Student
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0" >
+    <link href="~/css/styling.css" rel="stylesheet" type="text/css" />
+    <title>Insights</title>
+
+    <!-- https://www.askpython.com/python/examples/images-into-cartoons -->
+    <!-- https://www.youtube.com/watch?v=oYRda7UtuhA -->
+</head>
+<body>
+
+    <section class="header"> 
+
+         <nav class="about-section">
+             <!-- <a href="content.html"><img src="images/logo.jpeg"></a> -->
+             <h2><a href="#" class="logo">Insights</a></h2>
+             <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+                 <ul>
+                     @Html.ActionLink("Home","FrontPage","Home", null, null)
+                     
+                     @Html.ActionLink("Insights","Index","Home", null, null)
+                     @Html.ActionLink("AboutUs","AboutUs","Home", null, null)
+                     
+                 </ul>
+              </div>         
+         </nav>
+          <div class="text-box">
+              <h1>Use this website to add, delete and update student information in the portal</h1>
+          </div>
+</section>
+
+
+
+
+
+<h3 class="text-box">Are you sure you want to delete this record from database?</h3>
+<div>
+  
+    
+    <table class="table">
+    
+    
+         <thead>
+              <tr >
+            <th >
+                @Html.DisplayNameFor(model => model.studentName)
+            </th>
+
+             <th >
+                @Html.DisplayNameFor(model => model.studentScore)
+            </th>
+
+            <th >
+                @Html.DisplayNameFor(model => model.appliedUniversity)
+            </th>
+            </tr>
+       </thead>
+
+       <tbody>
+        <tr>
+            <td >
+                @Html.DisplayFor(model => model.studentName)
+            </td>
+            <td >
+                @Html.DisplayFor(model => model.studentScore)
+            </td>
+
+            <td >
+                @Html.DisplayFor(model => model.appliedUniversity)
+            </td>
+         </tr>
+         
+         </tbody>
+
+         </table>
+
+    <form asp-action="Delete" class="text-box">
+        <input type="hidden" asp-for="studentId" />
+        <div>
+        <input type="submit" value="Delete"  /> 
+       </div>
+        <div >
+        <a asp-action="Index" >Back to List</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

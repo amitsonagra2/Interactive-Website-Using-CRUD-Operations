@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="~/css/styling.css" rel="stylesheet" href="styling.css"><style>
+
+body {
+  font-family: 'Popponins', sans-serif;
+  margin: 0;
+}
+
+.body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.column {
+  float:left;
+  width: 50%;
+  margin-bottom: 20 px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  width: 400px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.about-section {
+  padding: 30px;
+  text-align: left;
+  background-color:rgb(116, 5, 5);
+  color: white;
+  height: 150px;
+}
+
+.pic_container {
+  padding: 0 16px;
+  width: 400px;
+  align-content: center;
+  align-self: center;
+  margin-bottom: 50px;
+}
+
+
+
+.pic_container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+ 
+}
+
+.pic_crop
+{
+  width: 400px; /* width of container */
+    height: 400px; /* height of container */
+    object-fit: cover;
+    
+}
+
+.hero-btn{
+    display:inline-block;
+    text-decoration: none;
+    color: rgb(116, 5, 5);
+    border: 1px solid rgb(116, 5, 5);
+    padding: 12px 34px;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-bottom: 30px;
+  
+}
+.hero-btn:hover{
+    border: 1px solid rgb(116, 5, 5);
+    background: rgb(116, 5, 5);
+    transition: 1s;
+    color: #fff;
+}
+
+.text_color
+{
+  color: rgb(116, 5, 5);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+
+.erd {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+@@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+
+<body>
+ 
+
+  <nav class="about-section">
+    <!-- <a href="content.html"><img src="images/logo.jpeg"></a> -->
+    <h2><a href="#" class="logo">About Us</a></h2>
+    
+    <div class="nav-links" id="navLinks">
+       <i class="fa fa-times" onclick="hideMenu()" ></i>
+        <ul>
+            
+                     @Html.ActionLink("Home","FrontPage","Home", null, null)
+                     
+                     @Html.ActionLink("Insights","Index","Home", null, null)
+                     @Html.ActionLink("AboutUs","AboutUs","Home", null, null)
+            
+        </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+
+
+
+  <h2 style="text-align:center" class="text_color">Our Team</h2>
+  
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="~/css/kk.jpeg" alt="Kharel" class="pic_crop">
+        <div class="pic_container">
+          <h2 class="text_color">Kshitiz Kharel</h2>
+          <p class="text_color">I am a student of MS BAIS at University of South Florida. I aspire to be a data analyst.
+            <br> I am interested in data visualization and statistical data mining subjects.
+          </p>
+          
+          <a class="hero-btn" href="https://github.com/KHARELKSH">GitHub</a>
+          <a class="hero-btn" href="https://github.com/KHARELKSH">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <img src="~/css/as.png" alt="Amit" class="pic_crop">
+        <div class="pic_container">
+          <h2 class="text_color">Amit Sonagra</h2>
+          <p class="text_color">I am a student MS BAIS at University of South Florida. I aspire to be a data scientist.
+            <br> I am interested in Web Development using MVC framework.
+          </p>
+         
+          <a class="hero-btn" href="https://github.com/amitusf">GitHub</a>
+
+          
+          <a class="hero-btn" href="https://www.linkedin.com/in/amit-sonagra-605054b5/">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h2 style="text-align:center" class="text_color">Entity Relation Diagram</h2>
+      <img  src="~/css/entity_relation_diagram.PNG" class="erd">
+    </div>
+      
+</body>
+</html>
+ 
+  

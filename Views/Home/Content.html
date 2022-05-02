@@ -1,0 +1,140 @@
+@*@model WebApplication1.Models.BigModel;*@
+
+
+
+@{
+    ViewBag.Title = "Content";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0" >
+    <link href="~/css/styling.css" rel="stylesheet" type="text/css" />
+    <title>Insights</title>
+
+    <!-- https://www.askpython.com/python/examples/images-into-cartoons -->
+    <!-- https://www.youtube.com/watch?v=oYRda7UtuhA -->
+</head>
+<body>
+    <section class="header"> 
+
+         <nav class="about-section">
+             <!-- <a href="content.html"><img src="images/logo.jpeg"></a> -->
+             <h2><a href="#" class="logo">Insights</a></h2>
+             <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+                 <ul>
+                     
+                     @Html.ActionLink("Home","Index","Home", null, null)
+                     
+                     @Html.ActionLink("Insights","Content","Home", null, null)
+                     @Html.ActionLink("AboutUs","AboutUs","Home", null, null)
+                     
+                 </ul>
+              </div>         
+         </nav>
+          <div class="text-box">
+              <h1>Use this website to add, delete and update student information in the portal</h1>
+          </div>
+                    
+          
+
+            
+             
+             
+               
+           <div class="bull">
+                <label asp-for="Department.departmentName" >Department Name</label>
+                <input asp-for="Department.departmentName"></input>
+           </div>
+           
+           <div class="bull">
+                <label asp-for="Campus.campusLocation" >Campus Location</label>
+               <input asp-for="Campus.campusLocation"></input>
+            </div>
+            
+            <div class="bull">
+                 <label asp-for="Student.studentName" >Student Name</label>
+                <input asp-for="Student.studentName"></input>
+            </div>
+           *@
+            <div class="bull">
+                <input type="submit" value="Add Student" class="submitbutton"> </input>
+            </div>
+            
+           
+            </form>
+ <p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.studentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.studentScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.appliedUniversity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.studentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.studentScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.appliedUniversity)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.studentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.studentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.studentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+    </section>
+
+
+
+<table class="table">
+  <thead class="table-header">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Department</th>
+      <th scope="col">Campus</th>
+    </tr>
+  </thead>
+  
+  <tbody  id="myTab">
+            
+     @*  @foreach()
+            {
+             <tr>
+                     <td>@items.Name</td>  
+             </tr>
+            }
+            *@
+  </tbody>
+
+
+</table>
+</body>
+</html>
