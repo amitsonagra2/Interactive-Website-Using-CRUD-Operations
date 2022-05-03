@@ -1,0 +1,90 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="/css/styling.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0" >
+   
+    <title>AdmissionFeesPortal</title>
+
+    <!-- https://www.askpython.com/python/examples/images-into-cartoons -->
+    <!-- https://www.youtube.com/watch?v=oYRda7UtuhA -->
+</head>
+<body>
+    <section class="header"> 
+         <nav class="about-section">         
+             <h2><a href="#" class="logo">AdmissionFeesPortal</a></h2>
+             <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+                 <ul>
+                     
+                     @Html.ActionLink("Home","FrontPage","Home", null, null)
+                    
+                     @Html.ActionLink("Insights","Index","Home", null, null)
+                      @Html.ActionLink("AboutUs","AboutUs","Home", null, null)
+
+                     
+                 </ul>
+             </div>
+             
+         </nav>
+         <div class="text-box">
+            <h1 class="para-header">Track The Number Degrees Awarded In Computer Science</h1>
+            <p class="para">Are you interested in pursuing Computer Science as a major, 
+                this website can help you in finding the fees for any public university in the USA
+                <br>
+                <br>This data is sourced from Datausa.io and kaggle website</p>
+            
+         </div>
+
+         <section class="grid">
+            <div class="info_container">Total Degrees Awarded In 2019
+                        <h2>47,906</h2>
+            </div>
+            <div class="info_container">Median In-State Public Tuition
+                        <h2>$6,930</h2>
+            </div>
+            <div class="info_container">Median Out-Of-State Private Tuition
+                        <h2>$34,177</h2>
+            </div>
+            <div class="info_container">Average Wage
+                <h2>$102,521</h2>
+    </div>
+    <div class="info_container">People In Workforce
+                <h2>2.17M</h2>
+    </div>
+    <div class="info_container">Average Employee Age
+                <h2>40.7</h2>
+    </div>
+
+
+         </section>
+
+         
+
+    </section>
+    
+<!-- ------Javascript for toggle  -->
+<script>
+    
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+
+    function hideMenu()
+    {
+        navLinks.style.right="-200px";
+    }
+
+</script>
+
+
+</body>
+</html>
